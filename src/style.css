@@ -1,3 +1,16 @@
 h1 {
   color: blue;
 }
+
+.card-weather {
+  border-radius: 50px;
+  background-color: violet;
+  margin: 100px;
+  padding: 50px;
+  text-align: center;
+}
+
+.following-days {
+  margin-top: 50px;
+  text-align: center;
+}

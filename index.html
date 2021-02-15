@@ -10,11 +10,81 @@
 </head>
 <body>
   <div class="container">
-    <h1>
-    Hello World
-    </h1>
+    <div class="card-weather">
+      <div class="card-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm">
+              <div class="input-container">
+                <form id="search-form">
+                  <div class="input-group input-group-sm mb-3">
+                    <div>
+                      <button id="search-button" type="button" class="input-group-text">
+                      <i class="fas fa-search"></i>
+                    </button>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Search for a city" aria-label="city" id="search-input">
+                  </div>
+                </form>
+              </div>
+              <div class="today">
+                <i class="fas fa-cloud-sun"></i>
+                <h1 class="temperature" id="current-temperature">18 ºC</h1>
+                <br />
+                WINDY
+              </div>
+              <div class="row">
+                <div class="col">
+                  HUMIDITY
+                  <br />
+                  12%
+                </div>
+                <div class="col">
+                  WIND
+                  <br />
+                  12 Km/h
+                </div>
+              </div>
+            </div>
+            <div class="col-sm">
+              One of three columns
+            </div>
+            <div class="col-sm">
+              <h1 id="current-city">Lisbon</h1>
+            </div>
+          </div>
+        </div>
+        <section class="extra-info-section">
+        <div class="row">
+          <div class="col-4">
+            Today's Highlights
+          </div>
+          <div class="col-8">
+            <div class="row">
+              <div class="col-sm">
+                1
+              </div>
+              <div class="col-sm">
+                1
+              </div>
+              <div class="col-sm">
+                1
+              </div>
+              <div class="col-sm">
+                1
+              </div>
+              <div class="col-sm">
+                1
+              </div>
+            </div>
+          </div>
+        </div>
+        </section>
+      </div>
+    </div>
   </div>
   
   <script src="src/app.js"></script>
+  <script src="https://kit.fontawesome.com/565ed4554b.js" crossorigin="anonymous"></script>
 </body>
 </html>
