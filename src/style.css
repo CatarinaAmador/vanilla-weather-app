@@ -1,16 +1,31 @@
-h1 {
-  color: blue;
+.card-body {
+  padding: 0;
 }
 
 .card-weather {
   border-radius: 50px;
   background-color: violet;
+  color: white;
+
   margin: 100px;
-  padding: 50px;
   text-align: center;
 }
 
-.following-days {
-  margin-top: 50px;
+.todays-info {
+  padding: 50px;
+}
+
+.extra-info {
+  background-color: white;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  color: #878787;
   text-align: center;
+  padding: 100px;
+}
+
+#body {
+  background-color: yellow;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
 }
