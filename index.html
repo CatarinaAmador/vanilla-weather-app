@@ -13,7 +13,7 @@
 <body id="body">
   <div class="container">
     <div class="card-weather">
-      <div class="card-body ">
+      <div class="card-body container-class">
         <div class="container">
           <div class="row todays-info">
             <div class="col-sm">
@@ -32,27 +32,24 @@
               <div class="today">
                 <i class="fas fa-cloud-sun"></i>
                 <h1 class="temperature" id="current-temperature">18 ºC</h1>
-                <br />
-                WINDY
+                <div id="current-weather-detail">WINDY</div> 
               </div>
-              <div class="row">
-                <div class="col">
+              <div class="row" id="todays-detailed-info">
+                <div class="col humidity">
                   HUMIDITY
-                  <br />
-                  12%
+                  <div id="current-humidity">12%</div>
                 </div>
                 <div class="col">
                   WIND
-                  <br />
-                  12 Km/h
+                  <div id="current-wind">12 Km/h</div>
                 </div>
               </div>
             </div>
             <div class="col-sm">
-              One of three columns
             </div>
             <div class="col-sm">
               <h1 id="current-city">LISBON</h1>
+              <hr id="hr">
             </div>
           </div>
         </div>
@@ -62,24 +59,44 @@
           <div class="row">
             <div class="col-4">
               Today's Highlights
-              <br><br>oi <br><br><br><br>oi
+              <ul>
+                <li>
+                  Thermic feeling 13º
+                </li>
+                <li>
+                  UV rays 0 to 10
+                </li>
+                <li>
+                  Precipitation 90%
+                </li>
+              </ul>
             </div>
             <div class="col-8">
               <div class="row">
                 <div class="col-sm">
-                  1
+                  Mon
+                  <br>
+                  15º | 10º
                 </div>
                 <div class="col-sm">
-                  1
+                  Tue
+                  <br>
+                  15º | 10º
                 </div>
                 <div class="col-sm">
-                  1
+                  Wed
+                  <br>
+                  15º | 10º
                 </div>
                 <div class="col-sm">
-                  1
+                  Thu
+                  <br>
+                  15º | 10º
                 </div>
                 <div class="col-sm">
-                  1
+                  Fri
+                  <br>
+                  15º | 10º
                 </div>
               </div>
             </div>

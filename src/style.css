@@ -4,15 +4,27 @@
 
 .card-weather {
   border-radius: 50px;
-  background-color: violet;
   color: white;
-
   margin: 100px;
   text-align: center;
 }
 
+.container-class {
+  background-image: url("background-img.jpg");
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+}
+
+.humidity {
+  border-right: 1px solid rgb(235, 232, 232);
+}
+
 .todays-info {
-  padding: 50px;
+  padding: 20px;
 }
 
 .extra-info {
@@ -25,7 +37,54 @@
 }
 
 #body {
-  background-color: yellow;
+  background-color: gray;
+  background-image: none;
   font-family: "Poppins", sans-serif;
-  font-weight: bold;
+  font-weight: bolder;
+}
+
+#todays-detailed-info {
+  font-size: 16px;
+  font-weight: lighter;
+  margin-top: 10px;
+}
+
+#current-city {
+  font-size: 48px;
+  font-weight: bolder;
+  margin-top: 25%;
+  text-shadow: #274f8c 1px 0 5px;
+}
+
+#current-weather-detail {
+  font-size: 28px;
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+
+#current-humidity {
+  font-size: 20px;
+  padding-top: 8px;
+}
+
+#current-temperature {
+  font-size: 80px;
+}
+
+#current-wind {
+  font-size: 20px;
+  padding-top: 8px;
+}
+
+#hr {
+  border-width: 4px;
+  border-radius: 50px;
+  color: white;
+  height: 8px;
+  margin-bottom: 7px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 9px;
+  opacity: 0.9;
+  width: 40%;
 }
