@@ -8,6 +8,7 @@
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <title>Weather App</title>
 </head>
 <body id="body">
@@ -16,7 +17,7 @@
       <div class="card-body container-class">
         <div class="container">
           <div class="row todays-info">
-            <div class="col-sm">
+            <div class="col-5">
               <div class="input-container">
                 <form id="search-form">
                   <div class="input-group input-group-sm mb-3">
@@ -30,7 +31,10 @@
                 </form>
               </div>
               <div class="today">
-                <i class="fas fa-cloud-sun"></i>
+                <div id="current-date">
+                  Monday 19h45
+                </div>
+                <img src="" alt="" id="today-icon">
                 <h1 class="temperature" id="current-temperature">18 ºC</h1>
                 <div id="current-weather-detail">WINDY</div> 
               </div>
@@ -41,13 +45,13 @@
                 </div>
                 <div class="col">
                   WIND
-                  <div id="current-wind">12 Km/h</div>
+                  <div id="current-wind">12 km/h</div>
                 </div>
               </div>
             </div>
-            <div class="col-sm">
+            <div class="col-2">
             </div>
-            <div class="col-sm">
+            <div class="col-5">
               <h1 id="current-city">LISBON</h1>
               <hr id="hr">
             </div>
@@ -61,15 +65,17 @@
               Today's Highlights
               <ul>
                 <li>
-                  Thermic feeling 13º
+                  <i class="fas fa-temperature-low"></i> Feels like <span id="thermic-feeling">13</span>º
                 </li>
                 <li>
-                  UV rays 0 to 10
+                  <i class="fas fa-compress-arrows-alt"></i> Pressure <span id="pressure">12</span> mb
                 </li>
                 <li>
-                  Precipitation 90%
+                  <i class="fas fa-eye"></i> Visibility <span id="visibility">12</span> km
                 </li>
               </ul>
+              sunrise: <span id="sunrise">21:00</span>
+              sunset: <span id="sunset">07:00</span>
             </div>
             <div class="col-8">
               <div class="row">

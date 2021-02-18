@@ -1,3 +1,14 @@
+body {
+  line-height: 2;
+}
+
+li {
+  color: #2b2b2b;
+  list-style: none;
+  padding: 5px;
+  text-align: left;
+}
+
 .card-body {
   padding: 0;
 }
@@ -28,7 +39,14 @@
 }
 
 .extra-info {
-  background-color: white;
+  background: rgb(158, 158, 161);
+  background: linear-gradient(
+    180deg,
+    rgba(158, 158, 161, 1) 0%,
+    rgba(208, 208, 209, 1) 10%,
+    rgba(236, 237, 238, 1) 17%,
+    rgba(255, 255, 255, 1) 26%
+  );
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
   color: #878787;
@@ -37,8 +55,7 @@
 }
 
 #body {
-  background-color: gray;
-  background-image: none;
+  background-image: linear-gradient(to right, #ec77ab 0%, #7873f5 100%);
   font-family: "Poppins", sans-serif;
   font-weight: bolder;
 }
@@ -54,12 +71,14 @@
   font-weight: bolder;
   margin-top: 25%;
   text-shadow: #274f8c 1px 0 5px;
+  text-transform: uppercase;
 }
 
 #current-weather-detail {
   font-size: 28px;
   font-weight: normal;
   margin-bottom: 20px;
+  text-transform: uppercase;
 }
 
 #current-humidity {
