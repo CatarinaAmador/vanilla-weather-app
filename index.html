@@ -13,30 +13,31 @@
 </head>
 <body id="body">
   <div class="container">
+    <button class="units"><a href="#" class="units-link active" id="celsius-link">ºC</a></button>
+    <button class="units"><a href="#" class="units-link" id="fahrenheit-link">ºF</a></button>
     <div class="card-weather">
       <div class="card-body container-class">
         <div class="container">
           <div class="row todays-info">
-            <div class="col-5">
+            <div class="col-6">
               <div class="input-container">
                 <form id="search-form">
                   <div class="input-group input-group-sm mb-3">
                     <div>
-                      <button id="search-button" type="button" class="input-group-text">
+                      <button id="search-button search-form" type="button" class="input-group-text">
                       <i class="fas fa-search"></i>
                     </button>
                     </div>
-                    <input type="text" class="form-control" placeholder="Search for a city" aria-label="city" id="search-input">
+                    <input type="text" class="form-control search-form" placeholder="Search for a city" aria-label="city" id="search-input" autocomplete="off">
                   </div>
                 </form>
               </div>
               <div class="today">
                 <div id="current-date">
-                  Monday 19h45
                 </div>
-                <img src="" alt="" id="today-icon">
-                <h1 class="temperature" id="current-temperature">18 ºC</h1>
-                <div id="current-weather-detail">WINDY</div> 
+                <span class="icon"><img src="" alt="" id="today-icon"></span>                
+                <h1><span class="temperature" id="current-temperature"></span><span id="unit"></span></h1>
+                <div id="current-weather-detail"></div> 
               </div>
               <div class="row" id="todays-detailed-info">
                 <div class="col humidity">
@@ -49,10 +50,10 @@
                 </div>
               </div>
             </div>
-            <div class="col-2">
+            <div class="col-1">
             </div>
-            <div class="col-5">
-              <h1 id="current-city">LISBON</h1>
+            <div class="col-5" id="city-name">
+              <h1 id="current-city"></h1>
               <hr id="hr">
             </div>
           </div>

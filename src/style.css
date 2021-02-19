@@ -9,6 +9,20 @@ li {
   text-align: left;
 }
 
+h1 {
+  display: inline;
+  width: 50px;
+}
+
+.active {
+  background: blueviolet;
+  opacity: 50%;
+}
+
+.active:hover {
+  cursor: default;
+}
+
 .card-body {
   padding: 0;
 }
@@ -52,6 +66,41 @@ li {
   color: #878787;
   text-align: center;
   padding: 100px;
+}
+
+.icon {
+  padding: 10px;
+  width: 20px;
+}
+
+.input-container {
+  width: 300px;
+}
+
+.search-form {
+  font-weight: bolder;
+  opacity: 50%;
+}
+
+.units {
+  background-color: #46b2d9;
+  border-color: #2e5286;
+  border-radius: 50px;
+  box-shadow: 2px 2px 10px gray;
+  padding: 5px 5px;
+  margin: 10px 5px;
+  width: 40px;
+}
+
+.units:hover {
+  background-color: #2e5286;
+  border-color: #46b2d9;
+}
+
+.units-link {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 #body {
@@ -106,4 +155,15 @@ li {
   margin-top: 9px;
   opacity: 0.9;
   width: 40%;
+}
+
+#unit {
+  font-size: 28px;
+  padding: 0 10px;
+  position: relative;
+  top: -35px;
+}
+
+#city-name {
+  margin-top: 12%;
 }
