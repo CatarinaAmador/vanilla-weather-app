@@ -18,8 +18,9 @@ let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather?";
 
 let celsiusTemperature = null;
 
-let unit = document.querySelector("#unit");
 let temperature = document.querySelector("#current-temperature");
+let unit = document.querySelector("#unit");
+
 ///////////////
 // Functions //
 ///////////////
@@ -57,7 +58,6 @@ function getTime(timestamp) {
 }
 
 function updateTemperature(response) {
-  let temperature = document.querySelector("#current-temperature");
   let currentCity = document.querySelector("#current-city");
   let currentDate = document.querySelector("#current-date");
   let weatherDetail = document.querySelector("#current-weather-detail");
@@ -72,6 +72,8 @@ function updateTemperature(response) {
 
   celsiusTemperature = response.data.main.temp;
   unit.innerHTML = "ºC";
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
 
   temperature.innerHTML = Math.round(response.data.main.temp);
   currentCity.innerHTML = `${response.data.name}`;
@@ -113,11 +115,6 @@ function getTemperaturePosition(position) {
 
 function getCurrentTemperature() {
   navigator.geolocation.getCurrentPosition(getTemperaturePosition);
-}
-
-function convertToFahrenheit(event) {
-  event.preventDefault();
-  alert("Hi");
 }
 
 function convertToFahrenheit(event) {
