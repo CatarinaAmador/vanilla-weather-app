@@ -14,13 +14,14 @@ h1 {
   width: 50px;
 }
 
-.active {
-  background: blueviolet;
-  opacity: 50%;
+h4 {
+  text-shadow: #b4b395 1px 0 2px;
+  text-transform: uppercase;
 }
 
-.active:hover {
-  cursor: default;
+.buttons {
+  margin-bottom: 25%;
+  text-align: right;
 }
 
 .card-body {
@@ -29,9 +30,29 @@ h1 {
 
 .card-weather {
   border-radius: 50px;
+  box-shadow: 5px 5px 15px gray;
   color: white;
   margin: 100px;
   text-align: center;
+}
+
+.coded-by {
+  color: #5a6275;
+  font-family: monospace;
+  text-align: center;
+  padding-bottom: 20px;
+  transition: all 200ms ease-in-out;
+}
+
+.me {
+  color: #1ab2a8;
+  text-decoration: none;
+  transition: all 200ms ease-in-out;
+}
+
+.me:hover {
+  color: #1ab2a8;
+  font-weight: bolder;
 }
 
 .container-class {
@@ -42,6 +63,19 @@ h1 {
   background-size: cover;
   border-top-left-radius: 50px;
   border-top-right-radius: 50px;
+}
+
+.current-location {
+  display: inline;
+  color: #9890e3;
+  font-size: 28px;
+  transition: all 200ms ease-in-out;
+  width: 10px;
+}
+
+.current-location:hover {
+  color: #b1f4cf;
+  cursor: pointer;
 }
 
 .humidity {
@@ -59,6 +93,7 @@ h1 {
 
 .todays-info {
   padding: 20px;
+  text-shadow: #274f8c 1px 0 5px;
 }
 
 .extra-info {
@@ -83,6 +118,7 @@ h1 {
 }
 
 .input-container {
+  display: inline;
   width: 300px;
 }
 
@@ -109,24 +145,29 @@ h1 {
 }
 
 .units {
-  background-color: #46b2d9;
-  border-color: #2e5286;
+  background-color: #b675cd;
+  border-color: #b675cd;
   border-radius: 50px;
-  box-shadow: 2px 2px 10px gray;
+  box-shadow: 2px 2px 10px #b675cd;
+  color: white;
+  font-weight: bold;
+  display: inline;
   padding: 5px 5px;
-  margin: 10px 5px;
+  margin: 0px 5px;
   width: 40px;
+  transition: all 200ms ease-in-out;
+}
+
+.units-link {
+  color: white;
+  text-decoration: none;
+  width: 10px;
+  transition: all 200ms ease-in-out;
 }
 
 .units:hover {
   background-color: #2e5286;
-  border-color: #46b2d9;
-}
-
-.units-link {
-  color: black;
-  font-weight: bold;
-  text-decoration: none;
+  border-color: #2e5286;
 }
 
 #body {
@@ -142,9 +183,10 @@ h1 {
 }
 
 #current-city {
+  display: inline;
   font-size: 48px;
   font-weight: bolder;
-  margin-top: 25%;
+  margin-top: 50%;
   text-shadow: #274f8c 1px 0 5px;
   text-transform: uppercase;
 }
@@ -190,6 +232,31 @@ h1 {
   top: -35px;
 }
 
-#city-name {
+/*#city-name {
   margin-top: 12%;
+}*/
+
+.description {
+  margin-top: 20px;
+  text-transform: uppercase;
+}
+
+.active {
+  opacity: 40%;
+}
+
+.active:hover {
+  cursor: default;
+}
+
+.active .units:hover {
+  cursor: default;
+  background-color: #b675cd;
+  border-color: #b675cd;
+}
+
+.active .units-link:hover {
+  cursor: default;
+  background-color: #b675cd;
+  border-color: #b675cd;
 }

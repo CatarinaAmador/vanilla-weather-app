@@ -13,13 +13,14 @@
 </head>
 <body id="body">
   <div class="container">
-    <button class="units"><a href="#" class="units-link active" id="celsius-link">ºC</a></button>
-    <button class="units"><a href="#" class="units-link" id="fahrenheit-link">ºF</a></button>
     <div class="card-weather">
       <div class="card-body container-class">
         <div class="container">
           <div class="row todays-info">
             <div class="col-4">
+              <div class="current-location" title="Current Location">
+                <i id="my-location" class="fas fa-map-marker-alt"></i>
+              </div>
               <div class="input-container">
                 <form id="search-form">
                   <div class="input-group input-group-sm mb-3">
@@ -53,6 +54,10 @@
             <div class="col-2">
             </div>
             <div class="col-6" id="city-name">
+              <div class="buttons">
+                <a href="#" class="units-link active" id="celsius-link" ><button class="units" >ºC</button></a>
+                <a href="#" class="units-link" id="fahrenheit-link"><button class="units">ºF</button></a>
+              </div>
               <h1 id="current-city"></h1>
               <hr id="hr">
             </div>
@@ -117,6 +122,11 @@
       </div>
     </div>
   </div>
+  <section class="coded-by">
+    <a href="https://github.com/CatarinaAmador/vanilla-weather-app" class="me" target="_blank">Open-source coded</a>
+    by
+    <a href="https://www.linkedin.com/in/catarina-amador-8b3245113/" class="me" target="_blank">Catarina Amador</a>
+  </section>
   
   <script src="src/app.js"></script>
   <script src="https://kit.fontawesome.com/565ed4554b.js" crossorigin="anonymous"></script>

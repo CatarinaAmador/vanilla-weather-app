@@ -18,9 +18,14 @@ let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather?";
 let apiForecastEndpoint = "https://api.openweathermap.org/data/2.5/forecast?"
 
 let celsiusTemperature = null;
+let defaultCity = null;
+let thermicFeeling = null;
+let isNavigationOn = false;
 
-let temperature = document.querySelector("#current-temperature");
-let unit = document.querySelector("#unit");
+let temperatureContainer = document.querySelector("#current-temperature");
+let unitContainer = document.querySelector("#unit");
+let thermicFeelingContainer = document.querySelector("#thermic-feeling");
+
 
 ///////////////
 // Functions //
@@ -59,8 +64,8 @@ function getTime(timestamp) {
 }
 
 function updateForecast(response) {
-  
   let count = 1;
+
   /* Getting forecast for 5 days at 3pm */
   for(let i = 5; i < 40; i = i + 8) {
     let date = new Date(response.data.list[i].dt * 1000);
@@ -73,7 +78,7 @@ function updateForecast(response) {
     icon.setAttribute(
     "src",
     `https://openweathermap.org/img/wn/${response.data.list[i].weather[0].icon}@2x.png`);
-  icon.setAttribute(
+    icon.setAttribute(
     "alt",
     `${response.data.list[i].weather[0].description}`);
     count++;
@@ -86,7 +91,6 @@ function updateTemperature(response) {
   let weatherDetail = document.querySelector("#current-weather-detail");
   let currentHumidity = document.querySelector("#current-humidity");
   let currentWind = document.querySelector("#current-wind");
-  let thermicFeeling = document.querySelector("#thermic-feeling");
   let pressure = document.querySelector("#pressure");
   let visibility = document.querySelector("#visibility");
   let sunrise = document.querySelector("#sunrise");
@@ -94,19 +98,22 @@ function updateTemperature(response) {
   let icon = document.querySelector("#today-icon");
 
   celsiusTemperature = response.data.main.temp;
-  unit.innerHTML = "ºC";
+  defaultCity = `${response.data.name}`;
+  thermicFeeling = response.data.main.feels_like;
+
   celsiusLink.classList.add("active");
   fahrenheitLink.classList.remove("active");
-
-  temperature.innerHTML = Math.round(response.data.main.temp);
+  
+  unitContainer.innerHTML = "ºC";
+  temperatureContainer.innerHTML = Math.round(response.data.main.temp);
   currentCity.innerHTML = `${response.data.name}`;
   currentDate.innerHTML = updateDate(response.data.dt * 1000);
   weatherDetail.innerHTML = `${response.data.weather[0].description}`;
   currentHumidity.innerHTML = `${response.data.main.humidity}%`;
   currentWind.innerHTML = `${Math.round(response.data.wind.speed)} Km/h`;
-  thermicFeeling.innerHTML = `${Math.round(response.data.main.feels_like)}`;
+  thermicFeelingContainer.innerHTML = `${Math.round(response.data.main.feels_like)}`;
   pressure.innerHTML = `${Math.round(response.data.main.pressure)}`;
-  visibility.innerHTML = `${Math.round(response.data.visibility / 100)}`;
+  visibility.innerHTML = `${Math.round(response.data.visibility / 1000)}`;
   sunrise.innerHTML = getTime(response.data.sys.sunrise * 1000);
   sunset.innerHTML = getTime(response.data.sys.sunset * 1000);
   icon.setAttribute(
@@ -115,6 +122,12 @@ function updateTemperature(response) {
   icon.setAttribute(
     "alt",
     `${response.data.weather[0].description}`);
+
+  if(isNavigationOn = true) {
+    let apiUrlForecast = `${apiForecastEndpoint}q=${defaultCity}&appid=${apiKey}&units=${units}`;
+    axios.get(apiUrlForecast).then(updateForecast);
+    isNavigationOn = false;
+  } else {}
 }
 
 function updateCity(city) {
@@ -134,8 +147,10 @@ function searchInput(event) {
 function getTemperaturePosition(position) {
   let lat = Math.round(position.coords.latitude);
   let lon = Math.round(position.coords.longitude);
-  let apiUrl = `${apiEndpoint}lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
+ 
+  isNavigationOn = true;
 
+  let apiUrl = `${apiEndpoint}lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(updateTemperature);
 }
 
@@ -143,27 +158,31 @@ function getCurrentTemperature() {
   navigator.geolocation.getCurrentPosition(getTemperaturePosition);
 }
 
+
+/* Conversion temperature unit functions */
 function convertToFahrenheit(event) {
   event.preventDefault();
   let fahrenheitTemperature = Math.round((celsiusTemperature * 9/5) + 32);
-  temperature.innerHTML = fahrenheitTemperature;
-  unit.innerHTML = "ºF";
+  temperatureContainer.innerHTML = fahrenheitTemperature;
+  thermicFeelingContainer.innerHTML = Math.round((thermicFeeling * 9/5) + 32);
+  unitContainer.innerHTML = "ºF"; 
+  let unit_f = "imperial";
+  let apiUrlForecast = `${apiForecastEndpoint}q=${defaultCity}&appid=${apiKey}&units=${unit_f}`;
+  axios.get(apiUrlForecast).then(updateForecast);
 
-  for(let i = 1; i < 6; i++) {
-    let currentForecast = `forecast${i}`;
-    document.querySelector(`#${currentForecast} .max-temp`).innerHTML = Math.round(response.data.list[i].main.temp_max);
-    document.querySelector(`#${currentForecast} .min-temp`).innerHTML = Math.round(response.data.list[i-3].main.temp_max);
-  }
-
-  
   fahrenheitLink.classList.add("active");
   celsiusLink.classList.remove("active");
 }
 
 function convertToCelsius(event) {
   event.preventDefault();
-  temperature.innerHTML = Math.round(celsiusTemperature);
-  unit.innerHTML = "ºC";
+  temperatureContainer.innerHTML = Math.round(celsiusTemperature);
+  thermicFeelingContainer.innerHTML = Math.round(thermicFeeling);
+  unitContainer.innerHTML = "ºC";
+
+  let apiUrlForecast = `${apiForecastEndpoint}q=${defaultCity}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrlForecast).then(updateForecast);
+
   celsiusLink.classList.add("active");
   fahrenheitLink.classList.remove("active");
 }
@@ -172,7 +191,7 @@ function convertToCelsius(event) {
 // JS flow //
 /////////////
 
-updateCity("Wellington");
+updateCity("Lisbon");
 
 /* Search Input */
 let searchForm = document.querySelector("#search-form");
@@ -188,9 +207,7 @@ fahrenheitLink.addEventListener("click", convertToFahrenheit);
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", convertToCelsius);
 
-
-/* Current Location Button */ /*
+/* Current Location Button */ 
 let currentLocation = document.querySelector("#my-location");
 currentLocation.addEventListener("click", getCurrentTemperature);
 
-*/
