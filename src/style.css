@@ -45,6 +45,15 @@ h1 {
 }
 
 .humidity {
+  border-image: linear-gradient(
+      180deg,
+      hsla(0, 0%, 87.1%, 0) 0,
+      #dedede 25%,
+      #dedede 70%,
+      hsla(0, 0%, 87.1%, 0) 85%,
+      hsla(0, 0%, 87.1%, 0)
+    )
+    1 100%;
   border-right: 1px solid rgb(235, 232, 232);
 }
 
@@ -75,6 +84,23 @@ h1 {
 
 .input-container {
   width: 300px;
+}
+
+.extra-info-container {
+  margin: 30px 0;
+}
+
+.highlights {
+  border-image: linear-gradient(
+      180deg,
+      hsla(0, 0%, 87.1%, 0) 0,
+      #dedede 25%,
+      #dedede 70%,
+      hsla(0, 0%, 87.1%, 0) 85%,
+      hsla(0, 0%, 87.1%, 0)
+    )
+    1 100%;
+  border-right: 2px solid #d3d3d3;
 }
 
 .search-form {

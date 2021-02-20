@@ -19,7 +19,7 @@
       <div class="card-body container-class">
         <div class="container">
           <div class="row todays-info">
-            <div class="col-6">
+            <div class="col-4">
               <div class="input-container">
                 <form id="search-form">
                   <div class="input-group input-group-sm mb-3">
@@ -50,9 +50,9 @@
                 </div>
               </div>
             </div>
-            <div class="col-1">
+            <div class="col-2">
             </div>
-            <div class="col-5" id="city-name">
+            <div class="col-6" id="city-name">
               <h1 id="current-city"></h1>
               <hr id="hr">
             </div>
@@ -60,10 +60,10 @@
         </div>
       </div>
       <div class="card-body extra-info">
-        <div class="container">
+        <div class="container extra-info-container">
           <div class="row">
-            <div class="col-4">
-              Today's Highlights
+            <div class="col-4 highlights">
+              <h3>Today's Highlights</h3>
               <ul>
                 <li>
                   <i class="fas fa-temperature-low"></i> Feels like <span id="thermic-feeling">13</span>º
@@ -80,30 +80,35 @@
             </div>
             <div class="col-8">
               <div class="row">
-                <div class="col-sm">
-                  Mon
-                  <br>
-                  15º | 10º
+                <div class="col-sm" id="forecast1">
+                  <h4>Mon</h4>
+                  <img src="http://openweathermap.org/img/wn/04d@2x.png" alt="">
+                  <span class="max-temp">15</span>º | <span class="min-temp">10</span>º <br>
+                  <span class="description">SUNNY</span>
                 </div>
-                <div class="col-sm">
-                  Tue
-                  <br>
-                  15º | 10º
+                <div class="col-sm" id="forecast2">
+                  <h4>Tue</h4>
+                  <img src="http://openweathermap.org/img/wn/04d@2x.png" alt="">
+                  <span class="max-temp">15</span>º | <span class="min-temp">10</span>º <br>
+                  <span class="description">SUNNY</span>
                 </div>
-                <div class="col-sm">
-                  Wed
-                  <br>
-                  15º | 10º
+                <div class="col-sm" id="forecast3">
+                  <h4>Wed</h4>
+                  <img src="http://openweathermap.org/img/wn/04d@2x.png" alt="">
+                  <span class="max-temp">15</span>º | <span class="min-temp">10</span>º <br>
+                  <span class="description">SUNNY</span> 
                 </div>
-                <div class="col-sm">
-                  Thu
-                  <br>
-                  15º | 10º
+                <div class="col-sm" id="forecast4">
+                  <h4>Thu</h4>
+                  <img src="http://openweathermap.org/img/wn/04d@2x.png" alt="">
+                  <span class="max-temp">15</span>º | <span class="min-temp">10</span>º <br>
+                  <span class="description">SUNNY</span>
                 </div>
-                <div class="col-sm">
-                  Fri
-                  <br>
-                  15º | 10º
+                <div class="col-sm" id="forecast5">
+                  <h4>Fri</h4>
+                  <img src="http://openweathermap.org/img/wn/04d@2x.png" alt="">
+                  <span class="max-temp">15</span>º | <span class="min-temp">10</span>º <br>
+                  <span class="description">SUNNY</span>
                 </div>
               </div>
             </div>
