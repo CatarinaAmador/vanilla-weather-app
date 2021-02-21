@@ -18,24 +18,26 @@
         <div class="container">
           <div class="row todays-info">
             <div class="col-4">
-              <div class="current-location" title="Current Location">
-                <i id="my-location" class="fas fa-map-marker-alt"></i>
-              </div>
-              <div class="input-container">
-                <form id="search-form">
-                  <div class="input-group input-group-sm mb-3">
-                    <div>
-                      <button id="search-button" type="button" class="input-group-text  search-form">
-                      <i class="fas fa-search"></i>
-                    </button>
-                    </div>
-                    <input type="text" class="form-control search-form" placeholder="Search for a city" aria-label="city" id="search-input" autocomplete="off">
-                  </div>
-                </form>
-              </div>
-              <div class="today">
-                <div id="current-date">
+              <div class="row">
+                <div id="current-location" title="Current Location">
+                  <i id="my-location" class="fas fa-map-marker-alt"></i>
                 </div>
+                <div id="input-container">
+                  <form id="search-form">
+                    <div class="input-group input-group-sm mb-3">
+                      <div>
+                        <button id="search-button" type="button" class="input-group-text  search-form">
+                          <i class="fas fa-search"></i>
+                        </button>
+                      </div>
+                      <input type="text" class="form-control search-form" placeholder="Search for a city" aria-label="city"
+                        id="search-input" autocomplete="off">
+                    </div>
+                  </form>
+                </div> 
+              </div>
+              
+              <div class="today">            
                 <span class="icon"><img src="" alt="" id="today-icon"></span>                
                 <h1><span class="temperature" id="current-temperature"></span><span id="unit"></span></h1>
                 <div id="current-weather-detail"></div> 
@@ -54,10 +56,15 @@
             <div class="col-2">
             </div>
             <div class="col-6" id="city-name">
-              <div class="buttons">
-                <a href="#" class="units-link active" id="celsius-link" ><button class="units" >ºC</button></a>
-                <a href="#" class="units-link" id="fahrenheit-link"><button class="units">ºF</button></a>
-              </div>
+              <div class="row" id="header">
+                <div class="col-12">
+                  <div id="current-date"></div>
+                  <div class="buttons">
+                    <a href="#" class="units-link active" id="celsius-link" title="Change to Celsius"><button class="units">ºC</button></a>
+                    <a href="#" class="units-link" id="fahrenheit-link"><button class="units" title="Change to Fahrenheit">ºF</button></a>
+                  </div>
+                </div>
+              </div>            
               <h1 id="current-city"></h1>
               <hr id="hr">
             </div>
@@ -69,51 +76,82 @@
           <div class="row">
             <div class="col-4 highlights">
               <h3>Today's Highlights</h3>
-              <ul>
+              <ul class="highlights-list">
                 <li>
-                  <i class="fas fa-temperature-low"></i> Feels like <span id="thermic-feeling">13</span>º
+                  <div class="row">
+                    <div class="col-8">
+                      <i class="fas fa-temperature-low"></i> Feels like
+                    </div>
+                    <div class="col-4">
+                      <span id="thermic-feeling">13</span>º                    
+                    </div>
+                  </div>
                 </li>
                 <li>
-                  <i class="fas fa-compress-arrows-alt"></i> Pressure <span id="pressure">12</span> mb
+                  <div class="row">
+                    <div class="col-8">
+                      <i class="fas fa-compress-arrows-alt"></i> Pressure
+                    </div>
+                    <div class="col-4">
+                      <span id="pressure">12</span> mb
+                    </div>
+                  </div>                  
                 </li>
                 <li>
-                  <i class="fas fa-eye"></i> Visibility <span id="visibility">12</span> km
+                  <div class="row">
+                    <div class="col-8">
+                      <i class="fas fa-eye"></i> Visibility
+                    </div>
+                    <div class="col-4">
+                      <span id="visibility">12</span> km
+                    </div>
+                  </div>                  
                 </li>
               </ul>
-              sunrise: <span id="sunrise">21:00</span>
-              sunset: <span id="sunset">07:00</span>
+              <i class="fas fa-angle-up" title="sunrise"></i> <span id="sunrise">21:00</span>
+              <i class="fas fa-angle-down" title="sunset"></i> <span id="sunset">07:00</span>
             </div>
             <div class="col-8">
               <div class="row">
                 <div class="col-sm" id="forecast1">
                   <h4>Mon</h4>
                   <img src="http://openweathermap.org/img/wn/04d@2x.png" alt="">
-                  <span class="max-temp">15</span>º | <span class="min-temp">10</span>º <br>
-                  <span class="description">SUNNY</span>
+                  <div class="forecast">
+                    <span class="max-temp">15</span>º | <span class="min-temp">10</span>º <br>
+                  </div>
+                  <div class="description">SUNNY</div>
                 </div>
                 <div class="col-sm" id="forecast2">
                   <h4>Tue</h4>
                   <img src="http://openweathermap.org/img/wn/04d@2x.png" alt="">
-                  <span class="max-temp">15</span>º | <span class="min-temp">10</span>º <br>
-                  <span class="description">SUNNY</span>
+                  <div class="forecast">
+                    <span class="max-temp">15</span>º | <span class="min-temp">10</span>º <br>
+                  </div>
+                  <div class="description">SUNNY</div>
                 </div>
                 <div class="col-sm" id="forecast3">
                   <h4>Wed</h4>
                   <img src="http://openweathermap.org/img/wn/04d@2x.png" alt="">
-                  <span class="max-temp">15</span>º | <span class="min-temp">10</span>º <br>
-                  <span class="description">SUNNY</span> 
+                  <div class="forecast">
+                    <span class="max-temp">15</span>º | <span class="min-temp">10</span>º <br>
+                  </div>
+                  <div class="description">SUNNY</div> 
                 </div>
                 <div class="col-sm" id="forecast4">
                   <h4>Thu</h4>
                   <img src="http://openweathermap.org/img/wn/04d@2x.png" alt="">
-                  <span class="max-temp">15</span>º | <span class="min-temp">10</span>º <br>
-                  <span class="description">SUNNY</span>
+                  <div class="forecast">
+                    <span class="max-temp">15</span>º | <span class="min-temp">10</span>º <br>
+                  </div>
+                  <div class="description">SUNNY</div>
                 </div>
                 <div class="col-sm" id="forecast5">
                   <h4>Fri</h4>
                   <img src="http://openweathermap.org/img/wn/04d@2x.png" alt="">
-                  <span class="max-temp">15</span>º | <span class="min-temp">10</span>º <br>
-                  <span class="description">SUNNY</span>
+                  <div class="forecast">
+                    <span class="max-temp">15</span>º | <span class="min-temp">10</span>º <br>
+                  </div>
+                  <div class="description">SUNNY</div>
                 </div>
               </div>
             </div>

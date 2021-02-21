@@ -12,6 +12,16 @@ let weekDays = [
   "Sat"
 ];
 
+let weekDaysLong = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday"
+];
+
 let units = "metric";
 let apiKey = "0f2fe65450d1f47efc01eb6a5ed904a1";
 let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather?";
@@ -31,9 +41,11 @@ let thermicFeelingContainer = document.querySelector("#thermic-feeling");
 // Functions //
 ///////////////
 
+
+
 function updateDate(timestamp) {
   let currDate = new Date(timestamp);
-  let weekDay = weekDays[currDate.getDay()];
+  let weekDay = weekDaysLong[currDate.getDay()];
   let hour = currDate.getHours();
   let min = currDate.getMinutes();
 
@@ -131,8 +143,16 @@ function updateTemperature(response) {
 }
 
 function updateCity(city) {
+  
   let apiUrl = `${apiEndpoint}q=${city}&appid=${apiKey}&units=${units}`;
-  axios.get(apiUrl).then(updateTemperature);
+  axios.get(apiUrl).then(updateTemperature).catch(err => {
+   
+    if (err.response) { 
+        alert("Only real cities accepted 😎");
+    } else if (err.request) {
+    } else {}
+    }
+  );
 
   let apiUrlForecast = `${apiForecastEndpoint}q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrlForecast).then(updateForecast);
@@ -210,4 +230,7 @@ celsiusLink.addEventListener("click", convertToCelsius);
 /* Current Location Button */ 
 let currentLocation = document.querySelector("#my-location");
 currentLocation.addEventListener("click", getCurrentTemperature);
+
+
+
 
